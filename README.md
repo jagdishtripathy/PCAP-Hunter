@@ -53,28 +53,32 @@
 ## 🚀 Quick Start
 
 ### Installation
+##### Clone the repository
 ```bash
-# Clone the repository
 git clone https://github.com/jagdishtripathy/PCAP-Hunter.git
 cd PCAP-Hunter
-
-# Install dependencies
+```
+##### Install dependencies
+```bash
 pip install -r requirements.txt
 ```
 
 ### Basic Usage
+##### Quick flag hunting
 ```bash
-# Quick flag hunting
-python main.py -f capture.pcap
-
-# Advanced analysis
-python main.py -f capture.pcap --mode advanced
-
-# Search for specific keywords
-python main.py -f capture.pcap --keyword "secret"
-
-# Custom pattern search
-python main.py -f capture.pcap --pattern "flag{.*}"
+python main.py -f <your pcap file>
+```
+##### Advanced analysis
+```bash
+python main.py -f <your pcap file> --mode advanced
+```
+##### Search for specific keywords
+```bash
+python main.py -f <your pcap file> --keyword "secret"
+```
+##### Custom pattern search
+```bash
+python main.py -f <your pcap file> --pattern "flag{.*}"
 ```
 
 ---
@@ -118,72 +122,34 @@ Results are saved to the output directory:
 ## 🧪 Examples
 
 ### CTF Challenge Analysis
+##### Quick flag hunt in a CTF PCAP
 ```bash
-# Quick flag hunt in a CTF PCAP
 python main.py -f ctf_challenge.pcap --mode advanced
-
-# Look for specific flag format
+```
+##### Look for specific flag format
+```bash
 python main.py -f ctf_challenge.pcap --pattern "picoCTF{.*}"
 ```
 
 ### Network Forensics
+##### Comprehensive network analysis
 ```bash
-# Comprehensive network analysis
 python main.py -f incident.pcap --mode advanced --save-payloads
-
-# Focus on specific protocols
+```
+##### Focus on specific protocols
+```bash
 python main.py -f incident.pcap --protocols http,https,dns --keyword "malware"
 ```
 
 ### Performance Tuning
+##### Large file analysis with threading
 ```bash
-# Large file analysis with threading
 python main.py -f large_capture.pcap --threads 4 --max-packets 10000
-
-# Quick sample analysis
+```
+##### Quick sample analysis
+```bash
 python main.py -f large_capture.pcap --max-packets 1000 --min-payload-size 50
 ```
-
----
-
-## 🏗️ Architecture
-
-```
-PCAP Hunter/
-├── core/                 # Core analysis modules
-│   ├── parser.py        # PCAP parsing and packet extraction
-│   ├── search.py        # Pattern matching and flag detection
-│   ├── decoder.py       # Multi-layer decoding
-│   ├── extractor.py     # File extraction
-│   └── exporter.py      # Results export
-├── advanced/            # Advanced analysis modules
-│   ├── stego.py        # Steganography detection
-│   ├── entropy_analysis.py # Entropy analysis
-│   ├── timing_analysis.py  # Timing analysis
-│   └── covert_channels.py  # Covert channel detection
-├── config/              # Configuration files
-├── utils/               # Utility functions
-└── tests/               # Test suite
-```
-
----
-
-## 🧪 Testing
-
-Run the comprehensive test suite:
-
-```bash
-# Run all tests
-python -m pytest tests/ -v
-
-# Run specific test module
-python -m pytest tests/test_search.py -v
-
-# Run with coverage
-python -m pytest tests/ --cov=core --cov=advanced
-```
-
----
 
 ## 📝 License
 
