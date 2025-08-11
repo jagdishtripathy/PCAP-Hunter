@@ -55,8 +55,8 @@
 ### Installation
 ```bash
 # Clone the repository
-git clone <your-repo-url>
-cd pcap-hunter
+git clone https://github.com/jagdishtripathy/PCAP-Hunter.git
+cd PCAP-Hunter
 
 # Install dependencies
 pip install -r requirements.txt
