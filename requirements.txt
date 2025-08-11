@@ -1,0 +1,23 @@
+# Essential dependencies for PCAP Hunter
+scapy>=2.5.0
+colorama>=0.4.6
+tqdm>=4.65.0
+
+# Enhanced protocol parsing (optional but recommended)
+pyshark>=0.6.0
+
+# File analysis and extraction
+python-magic>=0.4.27
+Pillow>=9.5.0
+binwalk>=2.3.3
+
+# Steganography detection
+zsteg>=0.2.0
+
+# Data analysis and visualization
+matplotlib>=3.7.0
+numpy>=1.24.0
+
+# Development dependencies (optional)
+pytest>=7.0.0
+pytest-cov>=4.0.0

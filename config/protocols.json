@@ -1,0 +1,146 @@
+{
+  "http": {
+    "name": "HTTP",
+    "ports": [80, 8080, 8000, 8888],
+    "description": "Hypertext Transfer Protocol",
+    "analysis": ["headers", "payload", "cookies", "user_agent"],
+    "flags": ["authorization", "cookie", "set-cookie"],
+    "extensions": [".html", ".htm", ".php", ".asp", ".jsp"]
+  },
+  "https": {
+    "name": "HTTPS",
+    "ports": [443, 8443],
+    "description": "HTTP over TLS/SSL",
+    "analysis": ["certificates", "encrypted_payload"],
+    "flags": ["ssl", "tls", "certificate"],
+    "extensions": [".pem", ".crt", ".key"]
+  },
+  "ftp": {
+    "name": "FTP",
+    "ports": [21, 20],
+    "description": "File Transfer Protocol",
+    "analysis": ["commands", "responses", "file_transfers"],
+    "flags": ["user", "pass", "retr", "stor"],
+    "extensions": [".txt", ".zip", ".rar", ".tar", ".gz"]
+  },
+  "dns": {
+    "name": "DNS",
+    "ports": [53],
+    "description": "Domain Name System",
+    "analysis": ["queries", "responses", "txt_records"],
+    "flags": ["query", "response", "txt", "cname"],
+    "extensions": []
+  },
+  "smtp": {
+    "name": "SMTP",
+    "ports": [25, 587, 465],
+    "description": "Simple Mail Transfer Protocol",
+    "analysis": ["headers", "body", "attachments"],
+    "flags": ["from", "to", "subject", "content-type"],
+    "extensions": [".eml", ".msg", ".txt"]
+  },
+  "pop3": {
+    "name": "POP3",
+    "ports": [110, 995],
+    "description": "Post Office Protocol 3",
+    "analysis": ["authentication", "messages", "attachments"],
+    "flags": ["user", "pass", "retr", "dele"],
+    "extensions": [".eml", ".msg"]
+  },
+  "imap": {
+    "name": "IMAP",
+    "ports": [143, 993],
+    "description": "Internet Message Access Protocol",
+    "analysis": ["authentication", "folders", "messages"],
+    "flags": ["login", "select", "fetch", "uid"],
+    "extensions": [".eml", ".msg"]
+  },
+  "ssh": {
+    "name": "SSH",
+    "ports": [22],
+    "description": "Secure Shell",
+    "analysis": ["version", "key_exchange", "encrypted_data"],
+    "flags": ["ssh", "key", "publickey"],
+    "extensions": [".pub", ".key", ".pem"]
+  },
+  "telnet": {
+    "name": "Telnet",
+    "ports": [23],
+    "description": "Telnet Protocol",
+    "analysis": ["commands", "responses", "credentials"],
+    "flags": ["login", "password", "username"],
+    "extensions": []
+  },
+  "irc": {
+    "name": "IRC",
+    "ports": [6667, 6668, 6669],
+    "description": "Internet Relay Chat",
+    "analysis": ["messages", "commands", "channels"],
+    "flags": ["nick", "join", "privmsg", "notice"],
+    "extensions": []
+  },
+  "tftp": {
+    "name": "TFTP",
+    "ports": [69],
+    "description": "Trivial File Transfer Protocol",
+    "analysis": ["file_transfers", "requests"],
+    "flags": ["read", "write", "data", "ack"],
+    "extensions": [".txt", ".bin", ".cfg"]
+  },
+  "snmp": {
+    "name": "SNMP",
+    "ports": [161, 162],
+    "description": "Simple Network Management Protocol",
+    "analysis": ["oids", "values", "traps"],
+    "flags": ["get", "set", "trap", "community"],
+    "extensions": []
+  },
+  "ntp": {
+    "name": "NTP",
+    "ports": [123],
+    "description": "Network Time Protocol",
+    "analysis": ["timestamps", "synchronization"],
+    "flags": ["time", "sync", "server"],
+    "extensions": []
+  },
+  "dhcp": {
+    "name": "DHCP",
+    "ports": [67, 68],
+    "description": "Dynamic Host Configuration Protocol",
+    "analysis": ["options", "leases", "configuration"],
+    "flags": ["discover", "offer", "request", "ack"],
+    "extensions": []
+  },
+  "icmp": {
+    "name": "ICMP",
+    "ports": [],
+    "description": "Internet Control Message Protocol",
+    "analysis": ["types", "codes", "payload"],
+    "flags": ["echo", "reply", "unreachable", "time_exceeded"],
+    "extensions": []
+  },
+  "arp": {
+    "name": "ARP",
+    "ports": [],
+    "description": "Address Resolution Protocol",
+    "analysis": ["requests", "replies", "spoofing"],
+    "flags": ["request", "reply", "mac", "ip"],
+    "extensions": []
+  },
+  "tcp": {
+    "name": "TCP",
+    "ports": [],
+    "description": "Transmission Control Protocol",
+    "analysis": ["flags", "sequence", "window", "payload"],
+    "flags": ["syn", "ack", "fin", "rst", "psh", "urg"],
+    "extensions": []
+  },
+  "udp": {
+    "name": "UDP",
+    "ports": [],
+    "description": "User Datagram Protocol",
+    "analysis": ["length", "checksum", "payload"],
+    "flags": ["length", "checksum"],
+    "extensions": []
+  }
+}
